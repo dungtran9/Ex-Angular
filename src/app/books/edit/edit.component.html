@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Cập nhật sách</h4>
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+      <form [formGroup]="editForm" (ngSubmit)="update()">
+        <div class="form-group">
+          <label>Tên:</label>
+          <input type="text" formControlName="title" class="form-control">
+          <div *ngIf="title.invalid && (title.dirty||title.touched)" class="alert alert-danger" role="alert">
+            Tên sách không được để trống!
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Tác giả:</label>
+          <input type="text" formControlName="author" class="form-control">
+          <div *ngIf="author.invalid && (author.dirty||author.touched)" class="alert alert-danger" role="alert">
+            Tên tác giả không được để trống!
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Mô tả:</label>
+          <input type="text" formControlName="description" class="form-control">
+          <div *ngIf="description.invalid && (description.dirty||description.touched)" class="alert alert-danger" role="alert">
+            Mô tả không được để trống!
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Cập nhật</button>
+          <a (click)="back()"  class="btn btn-secondary ml-2">Thoát</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

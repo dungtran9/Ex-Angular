@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Chi tiết sách</h4>
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+      <form [formGroup]="detailForm">
+        <div class="form-group">
+          <label>Tên:</label>
+          {{book.title}}
+
+        </div>
+        <div class="form-group">
+          <label>Tác giả: </label>
+          {{book.author}}
+
+        </div>
+        <div class="form-group">
+          <label>Mô tả: </label>
+          {{book.description}}
+
+        </div>
+        <div class="form-group">
+          <a (click)="back()"  class="btn btn-primary ">Xem danh sách</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

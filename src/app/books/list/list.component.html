@@ -1,0 +1,50 @@
+<div class="col-12 col-md-12">
+
+  <div class="pt-3">
+    <div class="card">
+
+      <div class="card-header ">
+        <h4>{{title}}</h4>
+      </div>
+
+      <div class="col-12 ">
+        <div class="row">
+        <div class="col-12 col-md-9">
+          <p>Có {{bookList.length}}cuốn sách<p>
+        </div>
+      <div class="col-12 col-md-3">
+        <button routerLink="add" class="btn btn-success">Thêm sách mới</button>
+      </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <table class="table table">
+          <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Tên sách</th>
+            <th scope="col">Tác giả</th>
+            <th scope="col"></th>
+
+
+          </tr>
+          </thead>
+          <tr *ngFor="let book of bookList; index as i">
+            <td>{{i + 1}}</td>
+            <td>
+              <a [routerLink]="['/detail',book.id]"  >{{book.title}}</a></td>
+            <td>{{book.author}}</td>
+            <td>
+              <a [routerLink]="['/delete',book.id]" class="btn btn-danger ml-3" >Xóa</a>
+              <a [routerLink]="['/edit',book.id]" class="btn btn-primary">Sửa</a>
+
+            </td>
+
+          </tr>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
